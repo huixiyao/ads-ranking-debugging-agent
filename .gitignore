@@ -1,4 +1,12 @@
 # Byte-compiled / optimized / DLL files
+# data files
+data/*.csv
+data/*.gz
+data/*.zip
+
+# Jupyter
+.ipynb_checkpoints
+
 __pycache__/
 *.py[codz]
 *$py.class

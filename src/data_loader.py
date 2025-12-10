@@ -1,16 +1,13 @@
 import pandas as pd
 
-def load_data(file_path):
+def load_sample_csv(path="/data/train.csv", nrows=100000):
     """
-    加载并清洗数据
-    :param file_path: 数据文件路径
-    :return: 处理后的 DataFrame
+    加载 Avazu train.csv 的一个子集，避免一次性读太大。
+    每一行视为一次展示，click=1 表示有点击。
     """
-    # 加载 CSV 文件
-    data = pd.read_csv(file_path)
-    
-    # 数据清洗（处理缺失值、数据类型转换等）
-    data.fillna(0, inplace=True)  # 填充缺失值
-    data['ctr'] = data['click'] / data['impr']  # 计算 CTR
-    
-    return data
+    df = pd.read_csv(path, nrows=nrows)
+    # Avazu 有一列叫 'click'，0 或 1
+    # 我们先简单定义：每行都是一次展示
+    df["impr"] = 1
+    df["ctr"] = df["click"]  # 0/1，后面可以用 mean(ctr) 当整体 CTR
+    return df
