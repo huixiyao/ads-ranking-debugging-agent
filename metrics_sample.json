@@ -1,0 +1,55 @@
+{
+  "global_ctr": 0.17528,
+  "route_stats": {
+    "MAIN": {
+      "ctr": 0.1727,
+      "impressions": 24929,
+      "avg_pred_ctr": 0.186,
+      "avg_rank_score": 0.1951,
+      "share": 0.4986,
+      "efficiency": 0.985
+    },
+    "SUP1": {
+      "ctr": 0.1824,
+      "impressions": 10153,
+      "avg_pred_ctr": 0.1945,
+      "avg_rank_score": 0.2337,
+      "share": 0.2031,
+      "efficiency": 1.0407
+    },
+    "SUP2": {
+      "ctr": 0.1708,
+      "impressions": 9864,
+      "avg_pred_ctr": 0.1845,
+      "avg_rank_score": 0.2031,
+      "share": 0.1973,
+      "efficiency": 0.9746
+    },
+    "SUP3": {
+      "ctr": 0.1826,
+      "impressions": 5054,
+      "avg_pred_ctr": 0.1948,
+      "avg_rank_score": 0.1946,
+      "share": 0.1011,
+      "efficiency": 1.0419
+    }
+  },
+  "surface_stats": {
+    "S1": {
+      "ctr": 0.1768,
+      "impressions": 19864,
+      "share": 0.3973
+    },
+    "S2": {
+      "ctr": 0.1754,
+      "impressions": 20194,
+      "share": 0.4039
+    },
+    "S3": {
+      "ctr": 0.172,
+      "impressions": 9942,
+      "share": 0.1988
+    }
+  },
+  "calibration_drift": 0.013051838727101006
+}
