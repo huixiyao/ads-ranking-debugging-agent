@@ -1,0 +1,34 @@
+{
+  "summary": "Generated 1 triage findings from aggregate metrics. This report prioritizes route bias, surface imbalance, and calibration signals.",
+  "hypotheses": [
+    {
+      "title": "Predicted CTR shows drift vs observed (mean pred_ctr - ctr = +0.0131).",
+      "confidence": "medium",
+      "evidence": {
+        "calibration_drift": 0.013051838727101006
+      },
+      "validation": "Run targeted A/B as suggested; confirm effect on route share, CTR, and value composition."
+    }
+  ],
+  "experiments": [
+    {
+      "name": "Calibration adjustment A/B (temperature scaling)",
+      "description": "Apply calibration layer to pred_ctr and/or score scaling; measure stability and downstream CTR/value proxies.",
+      "success_metrics": [
+        "calibration_drift",
+        "global_ctr",
+        "ctr_stability_proxy"
+      ],
+      "guardrails": [
+        "revenue_proxy",
+        "latency",
+        "auction_health_proxy"
+      ]
+    }
+  ],
+  "notes": [
+    "System is noisy and landscape changes frequently; prefer short ramp, strong guardrails, and holdout-based validation.",
+    "Aggregate metrics can hide segment-level regressions; slice by surface\u00d7route\u00d7user cohorts where possible.",
+    "Beware of novelty effects and auction dynamics when adjusting route share/privilege."
+  ]
+}
